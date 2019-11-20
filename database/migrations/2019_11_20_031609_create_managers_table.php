@@ -15,6 +15,8 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('username',60);
+            $table->string('password',100);
             $table->timestamps();
         });
     }
