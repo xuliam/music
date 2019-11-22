@@ -14,6 +14,8 @@ class LoginController extends Controller
 
     public function dologin(Request $request)
     {
+
+
        // dd($request->post());
         $result = Auth::attempt(['username' => $request->username, 'password' => $request->password]);
 //        dump(Auth::user());
@@ -21,7 +23,7 @@ class LoginController extends Controller
 //        dd($result);
 
         if ($result) {
-            return redirect('/');
+            return redirect('admin');
         } else {
             return redirect()->back();
         }

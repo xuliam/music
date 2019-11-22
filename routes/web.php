@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->name('admin.')->group(function  () {
+    Route::get('/',  "Admin\IndexController@index")->name('home');
     Route::get("login", "Admin\LoginController@login")->name('login.login');
     Route::post('/dologin', 'Admin\LoginController@dologin')->name('login.dologin');
     });
